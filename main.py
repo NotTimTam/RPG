@@ -6,7 +6,8 @@ from filesystem.usercontrol import getstats as gt
 import random, json, os
 
 # Setup window...
-os.system("mode con: cols=25 lines=80")
+cmd = 'mode 100,25'
+os.system(cmd)
 
 # Command dictionary.
 commands = {'help': help, 'clear': clr, 'stats': usercontrol.getstats}

@@ -2,8 +2,10 @@
 import random, json, os, colorama, time
 from colorama import init, Fore, Back, Style
 
-# Initialize colorama
+# Initialize colorama and window.
 init()
+cmd = 'mode 100,25'
+os.system(cmd)
 
 # JSON
 """
@@ -137,11 +139,11 @@ def startup():
 			v = "-"
 		elif e2 == 7:
 			v = "\\"
-		print(Fore.BLACK + Back.WHITE + (str(v) + Fore.RESET + Back.RESET) + (Fore.BLUE + " Loading... " + Fore.RESET) + str(e3) + "%")
+		print("\n\n\n\n\n\n\n\n\n\n\n                                          " + (Fore.BLACK + Back.WHITE + (str(v) + Fore.RESET + Back.RESET) + (Fore.BLUE + " Loading... " + Fore.RESET) + str(e3) + "%"))
 		time.sleep(0.01)
 
 	os.system('cls' if os.name == 'nt' else "printf '\033c'")
-	print(v + (Fore.GREEN + " Loaded!" + Fore.RESET))
+	print("\n\n\n\n\n\n\n\n\n\n\n                                          " + (v + (Fore.GREEN + " Loaded!" + Fore.RESET)))
 	time.sleep(0.5)
 	os.system('cls' if os.name == 'nt' else "printf '\033c'")
 	print("Welcome adventurer! Today's adventure is just on the horizon! What do we do first?")
