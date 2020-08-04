@@ -1,15 +1,13 @@
-# Runtime Python Game
+# rUNTIME pYTHON gAME (R.P.G)
 ## The Python Terminal RPG
 
-## Dependencies
+## Installation
 R.P.G was created using Python 3.8.5, to run it you need to install Python 3.X, preferably 3.8 or newer. It should work with older versions of Python 3.X, but there may be issues if you don't update to the latest version.
 
-If you don't run R.P.G. inside of our virtual system, you'll need to make sure you have all of the required external packages. Most of the packages that R.P.G uses are included with standard installations of Python. However, there are a few that need to be installed using [PIP](https://pypi.org/project/pip/).
+R.P.G was created with the *Microsoft Windows* operating system in mind. If you have any issues running it on other operating systems please do not hesitate to let us know.
 
-Here is a list of all packages that are required, ones marked in bold are not included with Python 3.8.5.
+Before you can start playing, you must install the software's dependencies. On windows this would consist of opening the *Command Prompt*, using *cd* to navigate to the **RPG** folder the files are contained in and run this command:
 
-- random
-- json
-- os
-- **colorama**
-- time
+`python -m pip install -r requirements.txt`
+
+After all of the required packages have been installed, simply run *main.py* and start playing! Entering commands is as simple as typing them in and hitting enter.
