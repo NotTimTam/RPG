@@ -1,11 +1,12 @@
 # Run me to play the game!
 from filesystem import setupuser as user
+from filesystem import usercontrol
 from filesystem.usercontrol import *
 from filesystem.usercontrol import getstats as gt
 import random, json
 
 # Command dictionary.
-commands = {'help': help, 'clear': clr, 'stats': gt}
+commands = {'help': help, 'clear': clr, 'stats': usercontrol.getstats}
 
 # Startup
 user.startup()
