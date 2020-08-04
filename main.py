@@ -2,7 +2,6 @@
 from filesystem import setupuser as user
 from filesystem.usercontrol import *
 from filesystem.usercontrol import getstats as gt
-from filesystem.colorsystem import *
 import random, time, json
 
 # Command dictionary.

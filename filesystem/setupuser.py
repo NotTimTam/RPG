@@ -2,8 +2,10 @@
 import random
 import json
 import os
-from filesystem.colorsystem import *
-from filesystem import colorsystem
+import colorama
+from colorama import init, Fore, Back, Style
+
+init()
 
 # JSON
 """
@@ -14,9 +16,9 @@ with open('data.json') as file:
 # Check if data file exists.
 try:
 	file = open('./filesystem/save_data.json')
-	print('╔═════════════════════════════╗\n║' + f'{bcolors.OKGREEN} Found save data! Loading... {bcolors.ENDC}' + '║\n╚═════════════════════════════╝')
+	print('╔═════════════════════════════╗\n║' + (Fore.RED + ' Found save data! Loading... ' + Fore.RESET) + '║\n╚═════════════════════════════╝')
 except IOError:
-	print('╔══════════════════════════════╗\n║'+ f'{bcolors.OKGREEN}    A NEW USER APPROACHES!    {bcolors.ENDC}' + f'║\n║{bcolors.HEADER} Creating a save data file... {bcolors.ENDC}║\n╚══════════════════════════════╝')
+	print('╔══════════════════════════════╗\n║'+ (Fore.GREEN + '    A NEW USER APPROACHES!    ' + Fore.RESET) + '║\n║' + (Fore.BLUE + ' Creating a save data file... ' + Fore.RESET) + '║\n╚══════════════════════════════╝')
 	file = open('./filesystem/save_data.json', 'w')
 	file.write('{}')
 finally:
@@ -45,7 +47,7 @@ def create_user():
 			data = json.load(file)
 
 		# Get the user's name.
-		print(f'\n╔══════════════════════════════╗\n║{bcolors.OKGREEN} What is your name adventurer? {bcolors.ENDC}║\n╚══════════════════════════════╝')
+		print('\n╔══════════════════════════════╗\n║ What is your name adventurer? ║\n╚══════════════════════════════╝')
 		name = input()
 		data['user_data'] = {}
 		data['user_data']['name'] = name
@@ -57,7 +59,7 @@ def create_user():
 		data['user_data']['luck'] = 1
 
 		# Get the user's class.
-		print(f'\n╔═════════════════╗\n║{bcolors.HEADER} Select a class! {bcolors.ENDC}║\n║ 1. Mage         ║\n║ 2. Knight       ║\n║ 3. Rogue        ║\n╚═════════════════╝')
+		print('\n╔═════════════════╗\n║ Select a class! ║\n║ 1. Mage         ║\n║ 2. Knight       ║\n║ 3. Rogue        ║\n╚═════════════════╝')
 
 		# Check that the user inputted a valid value for their class choice.
 		inp = input("Type 1, 2, or 3: ")
@@ -97,7 +99,7 @@ def create_user():
 		return '\n╔' + ("═" * line_len) + '╗\n║' + line + '║\n╚' + ("═" * line_len) + '╝'
 	# Load user data since it already exists.
 	else:
-		return f'\n╔══════════════════════╗\n║{bcolors.HEADER} Loading user data... {bcolors.ENDC}║\n╚══════════════════════╝'
+		return '\n╔══════════════════════╗\n║ Loading user data... ║\n╚══════════════════════╝'
 
 # Startup
 def startup():

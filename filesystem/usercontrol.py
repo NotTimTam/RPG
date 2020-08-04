@@ -2,13 +2,16 @@
 import json
 import os
 import random
-from filesystem.colorsystem import *
+import colorama
+from colorama import init, Fore, Back, Style
+
+init()
 
 """Menu control functions."""
 
 # Command help menu.
 def help():
-	return f'╔══════════════════════════════╗\n║{bcolors.OKGREEN}           - HELP -           {bcolors.ENDC}║\n║ help: open this menu.        ║\n║ clear: clear the screen.     ║\n║ stats: get your stats.       ║\n╚══════════════════════════════╝\n\n'
+	return '╔══════════════════════════════╗\n║           - HELP -           ║\n║ help: open this menu.        ║\n║ clear: clear the screen.     ║\n║ stats: get your stats.       ║\n╚══════════════════════════════╝\n\n'
 
 # Clear screen.
 def clr():
@@ -32,5 +35,5 @@ def getstats():
 	clss = data['user_data']['class']
 
 	# Arrange and return the values in a fancy format.
-	menusetup = (f'╔══════════════════════════════════╗\n║{bcolors.OKGREEN}             - STATS -            {bcolors.ENDC}║\n║ NAME: ' + name + '                        ║\n║ CLASS: ' + clss + '                     ║\n╚══════════════════════════════════╝\n\n')
+	menusetup = ('╔══════════════════════════════════╗\n║             - STATS -            ║\n║ NAME: ' + name + '                        ║\n║ CLASS: ' + clss + '                     ║\n╚══════════════════════════════════╝\n\n')
 	return menusetup
