@@ -5,6 +5,7 @@ import random
 import colorama
 from colorama import init, Fore, Back, Style
 
+# Initialize colorama.
 init()
 
 """Menu control functions."""
