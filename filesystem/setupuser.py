@@ -47,7 +47,7 @@ def create_user():
 			data = json.load(file)
 
 		# Get the user's name.
-		print('\n╔══════════════════════════════╗\n║ What is your name adventurer? ║\n╚══════════════════════════════╝')
+		print('\n╔═══════════════════════════════╗\n║ What is your name adventurer? ║\n╚═══════════════════════════════╝')
 		name = input()
 		data['user_data'] = {}
 		data['user_data']['name'] = name
