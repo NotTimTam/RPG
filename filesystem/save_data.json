@@ -1,0 +1,16 @@
+{
+    "user_data": {
+        "name": "",
+        "xp": 0,
+        "level": 0,
+        "health": 10,
+        "luck": 1,
+        "class": "Knight",
+        "inventory": {
+            "Coins": 5
+        },
+        "weapons": {
+            "Sword": 1
+        }
+    }
+}
