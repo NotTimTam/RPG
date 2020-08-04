@@ -1,16 +1,16 @@
 {
     "user_data": {
-        "name": "",
+        "name": "RPG GUY",
         "xp": 0,
         "level": 0,
         "health": 10,
         "luck": 1,
-        "class": "Knight",
+        "class": "Rogue",
         "inventory": {
             "Coins": 5
         },
         "weapons": {
-            "Sword": 1
+            "Shortbow": 1
         }
     }
 }
