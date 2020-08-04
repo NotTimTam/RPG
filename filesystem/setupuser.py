@@ -1,10 +1,8 @@
 # Imports
-import random
-import json
-import os
-import colorama
+import random, json, os, colorama, time
 from colorama import init, Fore, Back, Style
 
+# Initialize colorama
 init()
 
 # JSON
@@ -47,7 +45,7 @@ def create_user():
 			data = json.load(file)
 
 		# Get the user's name.
-		print('\n╔═══════════════════════════════╗\n║ What is your name adventurer? ║\n╚═══════════════════════════════╝')
+		print('\n╔═══════════════════════════════╗\n║' + (Fore.MAGENTA + ' What is your name adventurer? ' + Fore.RESET) + '║\n╚═══════════════════════════════╝')
 		name = input()
 		data['user_data'] = {}
 		data['user_data']['name'] = name
@@ -59,7 +57,7 @@ def create_user():
 		data['user_data']['luck'] = 1
 
 		# Get the user's class.
-		print('\n╔═════════════════╗\n║ Select a class! ║\n║ 1. Mage         ║\n║ 2. Knight       ║\n║ 3. Rogue        ║\n╚═════════════════╝')
+		print('\n╔═════════════════╗\n║' + (Fore.MAGENTA + ' Select a class! ' + Fore.RESET) + '║\n║ 1. Mage         ║\n║ 2. Knight       ║\n║ 3. Rogue        ║\n╚═════════════════╝')
 
 		# Check that the user inputted a valid value for their class choice.
 		inp = input("Type 1, 2, or 3: ")
@@ -99,14 +97,14 @@ def create_user():
 		return '\n╔' + ("═" * line_len) + '╗\n║' + line + '║\n╚' + ("═" * line_len) + '╝'
 	# Load user data since it already exists.
 	else:
-		return '\n╔══════════════════════╗\n║ Loading user data... ║\n╚══════════════════════╝'
+		return '\n╔══════════════════════╗\n║' + (Fore.MAGENTA + ' Loading user data... ' + Fore.RESET) + '║\n╚══════════════════════╝'
 
 # Startup
 def startup():
-	version = f'{bcolors.OKBLUE}V.0.1 Alpha{bcolors.ENDC}'
-	name = f'{bcolors.OKGREEN}RPG{bcolors.ENDC}'
+	version = (Fore.GREEN + 'V.0.1 Alpha' + Fore.RESET)
+	name = (Fore.RED + 'RPG' + Fore.RESET)
 	string = name + " | " + version
-	string_len = (len(string) + 2) - 18
+	string_len = (len(string) + 2) - 20
 	print("╔" + (string_len*"═") + "╗\n║ " + string + " ║\n╚" + (string_len*"═") + "╝\n\nPress 'enter' to start...")
 	input()
 
@@ -139,11 +137,11 @@ def startup():
 			v = "-"
 		elif e2 == 7:
 			v = "\\"
-		print(str(v) + "Loading... " + str(e3) + "%")
+		print(Fore.BLACK + Back.WHITE + (str(v) + Fore.RESET + Back.RESET) + (Fore.BLUE + " Loading... " + Fore.RESET) + str(e3) + "%")
 		time.sleep(0.01)
 
 	os.system('cls' if os.name == 'nt' else "printf '\033c'")
-	print(v + "Loaded!")
+	print(v + (Fore.GREEN + " Loaded!" + Fore.RESET))
 	time.sleep(0.5)
 	os.system('cls' if os.name == 'nt' else "printf '\033c'")
 	print("Welcome adventurer! Today's adventure is just on the horizon! What do we do first?")

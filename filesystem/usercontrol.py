@@ -11,7 +11,7 @@ init()
 
 # Command help menu.
 def help():
-	return '╔══════════════════════════════╗\n║           - HELP -           ║\n║ help: open this menu.        ║\n║ clear: clear the screen.     ║\n║ stats: get your stats.       ║\n╚══════════════════════════════╝\n\n'
+	return '╔══════════════════════════════╗\n║' + (Fore.CYAN + '           - HELP -           ' + Fore.RESET) + '║\n║ help: open this menu.        ║\n║ clear: clear the screen.     ║\n║ stats: get your stats.       ║\n╚══════════════════════════════╝\n\n'
 
 # Clear screen.
 def clr():
@@ -35,5 +35,5 @@ def getstats():
 	clss = data['user_data']['class']
 
 	# Arrange and return the values in a fancy format.
-	menusetup = ('╔══════════════════════════════════╗\n║             - STATS -            ║\n║ NAME: ' + name + '                        ║\n║ CLASS: ' + clss + '                     ║\n╚══════════════════════════════════╝\n\n')
+	menusetup = ('╔══════════════════════════════════╗\n║' + (Fore.CYAN + '             - STATS -            ' + Fore.RESET) + '║\n║ NAME: ' + name + '                        ║\n║ CLASS: ' + clss + '                     ║\n╚══════════════════════════════════╝\n\n')
 	return menusetup

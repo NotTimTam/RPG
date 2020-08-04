@@ -2,7 +2,7 @@
 from filesystem import setupuser as user
 from filesystem.usercontrol import *
 from filesystem.usercontrol import getstats as gt
-import random, time, json
+import random, json
 
 # Command dictionary.
 commands = {'help': help, 'clear': clr, 'stats': gt}
