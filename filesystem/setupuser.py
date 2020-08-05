@@ -8,8 +8,6 @@ cmd = 'mode 100,25'
 os.system(cmd)
 name = "RPG"
 os.system("title "+name)
-cmd = 'color 8'     
-os.system(cmd)
 
 # JSON
 """
@@ -107,7 +105,6 @@ def create_user():
 
 # Startup
 def startup():
-	os.system("title "+"SETUP")
 	version = (Fore.GREEN + 'V.0.1 Alpha' + Fore.RESET)
 	nm = (Fore.RED + name + Fore.RESET)
 	string = nm + " | " + version

@@ -8,6 +8,9 @@ from colorama import init, Fore, Back, Style
 # Initialize colorama.
 init()
 
+# Function dictionary.
+commands = {'help': help(), 'clear': clr(), 'stats': getstats()}
+
 """Menu control functions."""
 
 # Command help menu.
