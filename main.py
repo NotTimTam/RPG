@@ -15,11 +15,13 @@ user.startup()
 while True:
 	inp = input("")
 	try:
-		if inp in commands:
+		if inp in usercontrol.commands.keys():
 			# Clear the screen and run the command.
 			os.system('cls' if os.name == 'nt' else "printf '\033c'")
-			func = getattr(usercontrol.functions, inp)()
-			print(func)
+			#fn = getattr(usercontrol.functions, inp)
+			fn = usercontrol.commands[inp]
+			output = fn()
+			print(output)
 		else:
 			raise Exception("\nI don't understand '" + inp + "'\nTry typing 'help' for some help...\n")
 	except:

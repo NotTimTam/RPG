@@ -8,24 +8,27 @@ from colorama import init, Fore, Back, Style
 # Initialize colorama.
 init()
 
-# Command list...
-commands = ['help', 'clr', 'getstats']
-
 """Menu control functions."""
+
+
 class functions():
+
 	# Command help menu.
-	def help(self):
+	@staticmethod
+	def help():
 		return '╔══════════════════════════════╗\n║' + (Fore.CYAN + '           - HELP -           ' + Fore.RESET) + '║\n║ help: open this menu.        ║\n║ clear: clear the screen.     ║\n║ stats: get your stats.       ║\n╚══════════════════════════════╝\n\n'
 
 	# Clear screen.
-	def clr(self):
+	@staticmethod
+	def clear():
 		os.system('cls' if os.name == 'nt' else "printf '\033c'")
 		return ""
 
 	"""Player control functions"""
 
 	# Command to give stats.
-	def getstats(self):
+	@staticmethod
+	def stats():
 		# Open the data file.
 		with open('./filesystem/save_data.json') as file:
 			data = json.load(file)
@@ -74,3 +77,7 @@ class functions():
 		# Arrange and return the values in a fancy format.
 		menusetup = ('╔══════════════════════════════════════╗\n║' + (Fore.CYAN + '               - STATS -              ' + Fore.RESET) + '║\n║' + name_format + '║\n║' + class_format + '║\n╚══════════════════════════════════════╝\n\n')
 		return menusetup
+
+
+# Command list...
+commands = {'help': functions.help, 'clear': functions.clear, 'stats': functions.stats}
