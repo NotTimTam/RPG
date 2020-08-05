@@ -56,7 +56,7 @@ def create_user():
 
 		# Add extra values the user can't control.
 		data['user_data']['xp'] = 0
-		data['user_data']['level'] = 0
+		data['user_data']['level'] = 1
 		data['user_data']['health']=10
 		data['user_data']['luck'] = 1
 
