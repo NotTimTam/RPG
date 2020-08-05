@@ -16,13 +16,13 @@ class functions():
 	# Command help menu.
 	@staticmethod
 	def help():
-		return '\n\n\n\n\n\n\n\n                                   ' \
+		return '\n\n\n\n\n\n\n                                   ' \
 			'╔══════════════════════════════╗\n                                   ║' +\
 			(Fore.CYAN + '           - HELP -           ' + Fore.RESET) + \
 			'║\n                                   ║ help: open this menu.        ║\n'\
 			'                                   ║ clear: clear the screen.     ║\n'\
-			'                                   ║ stats: get your stats.       ║\n'\
-			'                                   ╚══════════════════════════════╝\n'
+			'                                   ║ stats: get your stats.       ║\n                                   ║ inv: check your inventory.   ║\n                                   ║ wep: check your weapons.     ║                                   '\
+			'                                 ╚══════════════════════════════╝\n'
 
 	# Clear screen.
 	@staticmethod
@@ -87,5 +87,49 @@ class functions():
 					 '                         ║' + (Fore.CYAN + '	              - STATS -              ' + Fore.RESET) + '║\n                              ║' + name_format + '║\n                              ║' + class_format + '║\n                              ║' + health_format + '║\n                              ║' + xp_format + '║\n                              ║' + level_format + '║\n                              ║' + luck_format + '║\n                              ╚══════════════════════════════════════╝\n\n')
 		return menusetup
 
+	# Command to give inventory.
+	@staticmethod
+	def inventory():
+		print('\n\n\n\n\n\n\n\n                              ╔══════════════════════════════════════╗\n                              ║            ' + Fore.CYAN + ' - INVENTORY - ' + Fore.RESET + '           ║\n                              ║                                      ║')
+
+		"""Grab inventory data"""
+
+		# Open the data file.
+		with open('./filesystem/save_data.json') as file:
+			data = json.load(file)
+
+		invlst = []
+		for i in data['user_data']['inventory']:
+			invlst.append(str(data['user_data']['inventory'][i]) + " | " + i)
+
+		for i in invlst:
+			ilen = 36 - len(i)
+			print('                              ║ ' + i + (ilen * " ") + ' ║')
+
+		return '                              ╚══════════════════════════════════════╝'
+
+	# Command to give weapons.
+	@staticmethod
+	def weapons():
+		"""Grab inventory data"""
+
+		# Open the data file.
+		with open('./filesystem/save_data.json') as file:
+			data = json.load(file)
+
+		invlst = []
+		for i in data['user_data']['weapons']:
+			invlst.append(i + " | Level: " + str(data['user_data']['weapons'][i]))
+
+		middle = ((len(invlst) + 3) / 2)
+
+		print('\n\n\n\n\n\n\n\n                              ╔══════════════════════════════════════╗\n                              ║             ' + Fore.CYAN + ' - WEAPONS - ' + Fore.RESET + '            ║\n                              ║                                      ║')
+
+		for i in invlst:
+			ilen = 36 - len(i)
+			print('                              ║ ' + i + (ilen * " ") + ' ║')
+
+		return '                              ╚══════════════════════════════════════╝'
+
 # Command list...
-commands = {'help': functions.help, 'clear': functions.clear, 'stats': functions.stats}
+commands = {'help': functions.help, 'clear': functions.clear, 'stats': functions.stats, 'inv': functions.inventory, 'wep': functions.weapons}

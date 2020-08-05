@@ -119,7 +119,8 @@ def startup():
 	v=""
 	while e > 0:
 		os.system('cls' if os.name == 'nt' else "printf '\033c'")
-		change = random.choice([1, 2, 3, 4, 5])
+		#change = random.choice([1, 2, 3, 4, 5])
+		change = 100
 		e -= change
 		e2 += 1
 		e3 += change
