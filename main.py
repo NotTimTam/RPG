@@ -22,8 +22,6 @@ while True:
 		if inp in commands:
 			os.system('cls' if os.name == 'nt' else "printf '\033c'")
 			print(commands[inp]())
-			cmd = 'mode 100,25'
-			os.system(cmd)
 		else:
 			raise Exception("\nI don't understand '" + inp + "'\nTry typing 'help' for some help...\n")
 	except:
