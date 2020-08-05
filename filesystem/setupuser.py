@@ -19,7 +19,7 @@ with open('data.json') as file:
 try:
 	file = open('./filesystem/save_data.json')
 	print('\n\n\n\n\n\n\n\n\n\n                                  ╔═════════════════════════════╗\n                                  ║' + (Fore.RED + ' Found save data! Loading... ' + Fore.RESET) + '║\n                                  ╚═════════════════════════════╝')
-except IOError:
+except:
 	print('╔══════════════════════════════╗\n║' + (Fore.GREEN + '    A NEW USER APPROACHES!    ' + Fore.RESET) + '║\n║' + (Fore.BLUE + ' Creating a save data file... ' + Fore.RESET) + '║\n╚══════════════════════════════╝')
 	file = open('./filesystem/save_data.json', 'w')
 	file.write('{}')

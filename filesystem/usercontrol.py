@@ -23,6 +23,12 @@ def adjust_health(amount):
 	with open('./filesystem/save_data.json', 'w') as outfile:
 		json.dump(data, outfile, indent=4)
 
+	round_health()
+
+	# Save the new data.
+	with open('./filesystem/save_data.json', 'w') as outfile:
+		json.dump(data, outfile, indent=4)
+
 # XP
 def adjust_xp(amount):
 	# Open the data file.
@@ -106,9 +112,92 @@ def add_to_weapons(weaponname, level):
 		json.dump(data, outfile, indent=4)
 
 # Clean Inventory
+def clean_inv():
+	# Open the data file.
+	with open('./filesystem/save_data.json') as file:
+		data = json.load(file)
+
+	# Start a list of empty keys.
+	del_list = []
+
+	for item in data['user_data']['inventory']:
+		if data['user_data']['inventory'][item] == 0:
+			del_list.append(item)
+		else:
+			continue
+
+	# Make sure the list isn't empty, if it isn't delete all the items from the data file.
+	if len(del_list) != 0:
+		for item in del_list:
+			del data['user_data']['inventory'][item]
+
+	# Save the new data.
+	with open('./filesystem/save_data.json', 'w') as outfile:
+		json.dump(data, outfile, indent=4)
+
+# Check if user has item in their inventory.
+def check_inv(item, itemcount):
+	# Open the data file.
+	with open('./filesystem/save_data.json') as file:
+		data = json.load(file)
+
+	# Check if the item exists and if there are enough of it.
+	if item in data['user_data']['inventory'] and data['user_data']['inventory'][item] >= itemcount:
+		return True
+	else:
+		return False
+
+# Check if a user has an item in theire weapons bag.
+def check_inv(weapon, weaponlevel):
+	# Open the data file.
+	with open('./filesystem/save_data.json') as file:
+		data = json.load(file)
+
+	# Check for the weapon and return weather it exists with that level.
+	if weapon in data['user_data']['weapons'] and data['user_data']['weapons'][weapon] >= weaponlevel:
+		return True
+	else:
+		return False
+
+# Level up the player.
+def level_up():
+	# Open the data file.
+	with open('./filesystem/save_data.json') as file:
+		data = json.load(file)
+
+	# Get the player's current level and increase it if you can.
+	old_level = data['user_data']['level']
+	while data['user_data']['xp'] >= data['user_data']['level'] * 100:
+		data['user_data']['xp'] -= data['user_data']['level']*100
+		data['user_data']['level'] += 1
+		with open('./filesystem/save_data.json', 'w') as outfile:
+			json.dump(data, outfile, indent=4)
+
+	# Save the new data.
+	with open('./filesystem/save_data.json', 'w') as outfile:
+		json.dump(data, outfile, indent=4)
+
+	# Return the results.
+	return old_level, data['user_data']['level'], data['user_data']['xp']
+
+# Keep player health below max.
+def round_health():
+	# Open the data file.
+	with open('./filesystem/save_data.json') as file:
+		data = json.load(file)
+
+	# Get the player's current level and increase it if you can.
+	if data['user_data']['health'] > 10 * data['user_data']['level']:
+		data['user_data']['health'] = 10 * data['user_data']['level']
+
+	# Save the new data.
+	with open('./filesystem/save_data.json', 'w') as outfile:
+		json.dump(data, outfile, indent=4)
+
+"""END OF Character Info Manipulation"""
 
 
-"""Menu control functions."""
+"""Menu Control Functions."""
 
 class functions():
 
