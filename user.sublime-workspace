@@ -3,6 +3,10 @@
 	{
 		"selected_items":
 		[
+			[
+				"buy",
+				"buying_his_wares"
+			]
 		]
 	},
 	"buffers":
@@ -11,7 +15,7 @@
 			"file": "main.py",
 			"settings":
 			{
-				"buffer_size": 794,
+				"buffer_size": 802,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -20,16 +24,26 @@
 			"file": "filesystem/usercontrol.py",
 			"settings":
 			{
-				"buffer_size": 8691,
+				"buffer_size": 11499,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "filesystem/save_data.json",
+			"file": "filesystem/shop.py",
 			"settings":
 			{
-				"buffer_size": 291,
+				"buffer_size": 5041,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "# Welcome to the shop."
+			}
+		},
+		{
+			"file": ".flooignore",
+			"settings":
+			{
+				"buffer_size": 72,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -38,7 +52,16 @@
 			"file": "filesystem/setupuser.py",
 			"settings":
 			{
-				"buffer_size": 5097,
+				"buffer_size": 5130,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "filesystem/save_data.json",
+			"settings":
+			{
+				"buffer_size": 267,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -216,14 +239,13 @@
 	"expanded_folders":
 	[
 		"/D/Program Files/Sublime Text 3/Projects/RPG",
-		"/D/Program Files/Sublime Text 3/Projects/RPG/filesystem",
-		"/D/Program Files/Sublime Text 3/Projects/RPG/venv",
-		"/D/Program Files/Sublime Text 3/Projects/RPG/venv/Lib"
+		"/D/Program Files/Sublime Text 3/Projects/RPG/filesystem"
 	],
 	"file_history":
 	[
-		"/C/Users/timmy/.floorc.json",
 		"/D/Program Files/Sublime Text 3/Projects/RPG/.flooignore",
+		"/D/Program Files/Sublime Text 3/Projects/RPG/filesystem/save_data.json",
+		"/C/Users/timmy/.floorc.json",
 		"/D/Program Files/Sublime Text 3/Projects/RPG/.idea/.gitignore",
 		"/D/Program Files/Sublime Text 3/Projects/RPG/requirements.txt",
 		"/D/Program Files/Sublime Text 3/Projects/RPG/filesystem/usercontrol.py",
@@ -234,7 +256,6 @@
 		"/D/Program Files/Sublime Text 3/Projects/RPG/.git/HEAD",
 		"/D/Program Files/Sublime Text 3/Projects/RPG/.git/config",
 		"/D/Program Files/Sublime Text 3/Projects/RPG/main.py",
-		"/D/Program Files/Sublime Text 3/Projects/RPG/filesystem/save_data.json",
 		"/C/Users/timmy/floobits/welcome.md",
 		"/D/Program Files/Sublime Text 3/Projects/RPG/save_data.json",
 		"/D/Program Files/Sublime Text 3/Projects/RPG/setupuser.py",
@@ -281,7 +302,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -290,15 +311,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 794,
+						"buffer_size": 802,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								333,
-								333
+								310,
+								310
 							]
 						],
 						"settings":
@@ -309,7 +330,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -318,15 +339,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8691,
+						"buffer_size": 11499,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2521,
-								2521
+								230,
+								230
 							]
 						],
 						"settings":
@@ -336,27 +357,113 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1199.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "filesystem/save_data.json",
+					"file": "filesystem/shop.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 291,
+						"buffer_size": 5041,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								79,
-								79
+								130,
+								130
+							]
+						],
+						"settings":
+						{
+							"auto_name": "# Welcome to the shop.",
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1189.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": ".flooignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 72,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2,
+								2
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "filesystem/setupuser.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5130,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1216,
+								1216
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 432.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "filesystem/save_data.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 267,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								267,
+								267
 							]
 						],
 						"settings":
@@ -369,36 +476,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "filesystem/setupuser.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5097,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1203,
-								1203
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 432.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -437,7 +515,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 222.0
+		"height": 187.0
 	},
 	"output.find_results":
 	{

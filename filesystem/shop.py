@@ -3,7 +3,7 @@ import random, time, os, colorama, json
 from colorama import init, Fore, Back, Style
 
 # Skeleton animation.
-skelly = """\n\n\n\n\n\n     ╔═══════════════════════════════════════════════════════════════════════════════════════╗\n     ║      _..--""---.                                                                      ║\n     ║     /           ".    *ZARGAR the SKELETON merchant jaunts into the room*             ║\n     ║     `            l                                                                    ║\n     ║     |'._  ,._ l/"     "Would you like to buy my wares? I have various wares for sale. ║\n     ║     |  _J<__/.v._/     You should definitely buy my wares."                           ║\n     ║      \\( ,~._,,,,-)                                                                    ║\n     ║       `-\\' \\`,,j|                                                                     ║\n     ║          \\_,____J                                                                     ║\n     ║     .--.__)--(                                                                        ║\n     ╚═══════════════════════════════════════════════════════════════════════════════════════╝"""
+skelly = """\n\n\n\n\n\n     ╔═══════════════════════════════════════════════════════════════════════════════════════╗\n     ║      _..--""---.                                                                      ║\n     ║     /           ".    *ZARGAR the SKELETON merchant bumbulingly skips into the room*  ║\n     ║     `            l                                                                    ║\n     ║     |'._  ,._ l/"     "Would you like to buy my wares? I have various wares for sale. ║\n     ║     |  _J<__/.v._/     You should definitely buy my wares."                           ║\n     ║      \\( ,~._,,,,-)                                                                    ║\n     ║       `-\\' \\`,,j|                                                                     ║\n     ║          \\_,____J                                                                     ║\n     ║     .--.__)--(                                                                        ║\n     ╚═══════════════════════════════════════════════════════════════════════════════════════╝"""
 
 shop_items = {"Health Potion": 15, "Raspberry Cram": 50, "Berry Cram": 100, "Very Berry Cram": 200}
 
@@ -29,7 +29,7 @@ class shop():
 				continue
 
 		if buying_his_wares == False:
-			return "\n     *The SKELETON looks sad as he trudges away...*\n"
+			return "\n     *The SKELETON frowns and trudges away...*\n"
 		else:
 			print("\n     *The SKELETON smiles and opens his bag.*")
 
@@ -93,4 +93,4 @@ class shop():
 			if inp == "done":
 				break
 
-			return '                              *The SKELETON closes his bag, thanks you for your purchase, and shuffles away...*'
+			return '                              *The SKELETON closes his bag, thanks you for your purchase, and walks into the darkness...*'
