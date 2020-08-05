@@ -4,6 +4,8 @@ import os
 import random
 import colorama
 from colorama import init, Fore, Back, Style
+from filesystem import shop
+from filesystem.shop import *
 
 # Initialize colorama.
 init()
@@ -338,4 +340,4 @@ class functions():
 
 # Command list...
 commands = {'help': functions.help, 'clear': functions.clear, 'stats': functions.stats, 'inv': functions.inventory,
-            'wep': functions.weapons}
+            'wep': functions.weapons, 'shop': shop.go_shop}

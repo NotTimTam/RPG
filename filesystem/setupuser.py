@@ -52,6 +52,8 @@ def create_user():
 		print('\n╔═══════════════════════════════╗\n║' + (Fore.MAGENTA + ' What is your name adventurer? ' + Fore.RESET) + '║\n╚═══════════════════════════════╝')
 		name = input()
 		data['user_data'] = {}
+		if len(name) > 30:
+			name = name[:30]
 		data['user_data']['name'] = name
 
 		# Add extra values the user can't control.

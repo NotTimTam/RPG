@@ -13,13 +13,13 @@ user.startup()
 
 # Main loop.
 while True:
-	inp = input("")
-	if inp == "":
-		pass
-	elif inp == " ":
-		pass
+	inp = input("> ")
 	try:
-		if inp in usercontrol.commands.keys():
+		if inp == "":
+			pass
+		elif inp == " ":
+			pass
+		elif inp in usercontrol.commands.keys():
 			# Clear the screen and run the command.
 			os.system('cls' if os.name == 'nt' else "printf '\033c'")
 			#fn = getattr(usercontrol.functions, inp)
