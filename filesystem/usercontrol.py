@@ -16,7 +16,13 @@ class functions():
 	# Command help menu.
 	@staticmethod
 	def help():
-		return '╔══════════════════════════════╗\n║' + (Fore.CYAN + '           - HELP -           ' + Fore.RESET) + '║\n║ help: open this menu.        ║\n║ clear: clear the screen.     ║\n║ stats: get your stats.       ║\n╚══════════════════════════════╝\n\n'
+		return '\n\n\n\n\n\n\n\n                                   ' \
+			'╔══════════════════════════════╗\n                                   ║' +\
+			(Fore.CYAN + '           - HELP -           ' + Fore.RESET) + \
+			'║\n                                   ║ help: open this menu.        ║\n'\
+			'                                   ║ clear: clear the screen.     ║\n'\
+			'                                   ║ stats: get your stats.       ║\n'\
+			'                                   ╚══════════════════════════════╝\n'
 
 	# Clear screen.
 	@staticmethod
@@ -49,22 +55,22 @@ class functions():
 		name_format = name_format + (" " * (38-name_length))
 
 		# XP
-		xp_format = ' XP: ' + xp
+		xp_format = ' XP: ' + str(xp)
 		xp_length = len(xp_format)
 		xp_format = xp_format + (" " * (38-xp_length))
 
 		# Level
-		level_format = ' LVL: ' + level
+		level_format = ' LVL: ' + str(level)
 		level_length = len(level_format)
 		level_format = level_format + (" " * (38-level_length))
 
 		# Health
-		health_format = ' HP: ' + health
+		health_format = ' HP: ' + str(health)
 		health_length = len(health_format)
 		health_format = health_format + (" " * (38-health_length))
 
 		# Luck
-		luck_format = ' LK: ' + luck
+		luck_format = ' LK: ' + str(luck)
 		luck_length = len(luck_format)
 		luck_format = luck_format + (" " * (38-luck_length))
 
@@ -75,9 +81,11 @@ class functions():
 
 
 		# Arrange and return the values in a fancy format.
-		menusetup = ('╔══════════════════════════════════════╗\n║' + (Fore.CYAN + '               - STATS -              ' + Fore.RESET) + '║\n║' + name_format + '║\n║' + class_format + '║\n╚══════════════════════════════════════╝\n\n')
-		return menusetup
 
+		menusetup = ('\n\n\n\n\n\n\n\n                              '
+					 '╔══════════════════════════════════════╗\n     '
+					 '                         ║' + (Fore.CYAN + '	              - STATS -              ' + Fore.RESET) + '║\n                              ║' + name_format + '║\n                              ║' + class_format + '║\n                              ║' + health_format + '║\n                              ║' + xp_format + '║\n                              ║' + level_format + '║\n                              ║' + luck_format + '║\n                              ╚══════════════════════════════════════╝\n\n')
+		return menusetup
 
 # Command list...
 commands = {'help': functions.help, 'clear': functions.clear, 'stats': functions.stats}

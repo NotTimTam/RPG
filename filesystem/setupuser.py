@@ -18,9 +18,9 @@ with open('data.json') as file:
 # Check if data file exists.
 try:
 	file = open('./filesystem/save_data.json')
-	print('╔═════════════════════════════╗\n║' + (Fore.RED + ' Found save data! Loading... ' + Fore.RESET) + '║\n╚═════════════════════════════╝')
+	print('\n\n\n\n\n\n\n\n\n\n                                  ╔═════════════════════════════╗\n                                  ║' + (Fore.RED + ' Found save data! Loading... ' + Fore.RESET) + '║\n                                  ╚═════════════════════════════╝')
 except IOError:
-	print('╔══════════════════════════════╗\n║'+ (Fore.GREEN + '    A NEW USER APPROACHES!    ' + Fore.RESET) + '║\n║' + (Fore.BLUE + ' Creating a save data file... ' + Fore.RESET) + '║\n╚══════════════════════════════╝')
+	print('╔══════════════════════════════╗\n║' + (Fore.GREEN + '    A NEW USER APPROACHES!    ' + Fore.RESET) + '║\n║' + (Fore.BLUE + ' Creating a save data file... ' + Fore.RESET) + '║\n╚══════════════════════════════╝')
 	file = open('./filesystem/save_data.json', 'w')
 	file.write('{}')
 finally:
@@ -109,8 +109,8 @@ def startup():
 	nm = (Fore.RED + name + Fore.RESET)
 	string = nm + " | " + version
 	string_len = (len(string) + 2) - 20
-	print("╔" + (string_len*"═") + "╗\n║ " + string + " ║\n╚" + (string_len*"═") + "╝\n\nPress 'enter' to start...")
-	input()
+	print("\n\n\n\n\n\n\n\n\n\n                                      ╔" + (string_len*"═") + "╗\n                                      ║ " + string + " ║\n                                      ╚" + (string_len*"═") + "╝\n\n")
+	time.sleep(2)
 
 	# Loading screen...
 	e = 100
@@ -152,5 +152,5 @@ def startup():
 
 # Run things...
 create_user()
-input("\nFINISHED! Press 'enter' to continue... ")
+time.sleep(1)
 os.system('cls' if os.name == 'nt' else "printf '\033c'")
