@@ -2,6 +2,7 @@
 import random, time, os, colorama, json
 from colorama import init, Fore, Back, Style
 from filesystem.usercontrol import *
+from filesystem import usercontrol
 
 # Skeleton animation.
 skelly = """\n\n\n\n\n\n     ╔═══════════════════════════════════════════════════════════════════════════════════════╗\n     ║      _..--""---.                                                                      ║\n     ║     /           ".    *ZARGAR the SKELETON merchant bumbulingly skips into the room*  ║\n     ║     `            l                                                                    ║\n     ║     |'._  ,._ l/"     "Would you like to buy my wares? I have various wares for sale. ║\n     ║     |  _J<__/.v._/     You should definitely buy my wares."                           ║\n     ║      \\( ,~._,,,,-)                                                                    ║\n     ║       `-\\' \\`,,j|                                                                     ║\n     ║          \\_,____J                                                                     ║\n     ║     .--.__)--(                                                                        ║\n     ╚═══════════════════════════════════════════════════════════════════════════════════════╝"""
@@ -116,7 +117,7 @@ class shop():
 						cost = amount * shop_items[name]
 
 						# Check if the player has enough funds.
-						if check_inv("Coins", cost):
+						if usercontrol.check_inv("Coins", cost):
 							with open('./filesystem/save_data.json') as file:
 								data = json.load(file)
 
@@ -128,6 +129,12 @@ class shop():
 								data['user_data']['inventory'][name] += amount
 							else:
 								data['user_data']['inventory'][name] = amount
+
+							has_made_purchase = True
+
+							print("*the SKELETON rummages through his bag and pulls out " + str(amount) + " " + name + "(s) and recieves your payment of $" + str(cost) + "*")
+
+							usercontrol.clean_inv()
 
 							# Save the new data.
 							with open('./filesystem/save_data.json', 'w') as outfile:
