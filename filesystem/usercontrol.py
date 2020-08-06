@@ -137,6 +137,7 @@ def clean_inv():
 	with open('./filesystem/save_data.json', 'w') as outfile:
 		json.dump(data, outfile, indent=4)
 
+
 # Check if user has item in their inventory.
 def check_inv(item, itemcount):
 	# Open the data file.
@@ -149,8 +150,9 @@ def check_inv(item, itemcount):
 	else:
 		return False
 
-# Check if a user has an item in theire weapons bag.
-def check_inv(weapon, weaponlevel):
+
+# Check if a user has an item in their weapons bag.
+def check_wep(weapon, weaponlevel):
 	# Open the data file.
 	with open('./filesystem/save_data.json') as file:
 		data = json.load(file)
@@ -160,6 +162,7 @@ def check_inv(weapon, weaponlevel):
 		return True
 	else:
 		return False
+
 
 # Level up the player.
 def level_up():
