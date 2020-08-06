@@ -1,7 +1,5 @@
 # Run me to play the game!
-from filesystem import setupuser as user
-from filesystem import usercontrol
-from filesystem.usercontrol import *
+from filesystem import setupuser, usercontrol
 import random, json, os
 
 # Setup window...
@@ -9,7 +7,7 @@ cmd = 'mode 100,25'
 os.system(cmd)
 
 # Startup
-user.startup()
+setupuser.startup()
 
 # Main loop.
 while True:
@@ -26,6 +24,7 @@ while True:
 			fn = usercontrol.commands[inp]
 			output = fn()
 			print(output)
+			usercontrol.clean_inv()
 		else:
 			raise Exception("\nI don't understand '" + inp + "'\nTry typing 'help' for some help...\n")
 	except:

@@ -7,8 +7,9 @@
         "luck": 1,
         "class": "Knight",
         "inventory": {
-            "Coins": 55878087263,
-            "Health Potion": 14
+            "Coins": 462.5,
+            "Health Potion": 16,
+            "Very Berry Cram": 0
         },
         "weapons": {
             "Sword": 1

@@ -1,13 +1,13 @@
 # Welcome to the shop.
 import random, time, os, colorama, json
 from colorama import init, Fore, Back, Style
-from filesystem.usercontrol import *
 from filesystem import usercontrol
 
 # Skeleton animation.
 skelly = """\n\n\n\n\n\n     ╔═══════════════════════════════════════════════════════════════════════════════════════╗\n     ║      _..--""---.                                                                      ║\n     ║     /           ".    *ZARGAR the SKELETON merchant bumbulingly skips into the room*  ║\n     ║     `            l                                                                    ║\n     ║     |'._  ,._ l/"     "Would you like to buy my wares? I have various wares for sale. ║\n     ║     |  _J<__/.v._/     You should definitely buy my wares."                           ║\n     ║      \\( ,~._,,,,-)                                                                    ║\n     ║       `-\\' \\`,,j|                                                                     ║\n     ║          \\_,____J                                                                     ║\n     ║     .--.__)--(                                                                        ║\n     ╚═══════════════════════════════════════════════════════════════════════════════════════╝"""
 
-shop_items = {"Health Potion": 15, "Raspberry Cram": 50, "Berry Cram": 100, "Very Berry Cram": 200}
+shop_items = {"Health Potion": 15, "Raspberry Cram": 50, "Berry Cram": 100, "Very Berry Cram": 200} # Item Costs.
+shop_items_desc = {"Health Potion": "", "Raspberry Cram": "", "Berry Cram": "", "Very Berry Cram": ""} # Item Descriptions.
 
 # Shop design and control.
 class shop():
@@ -71,7 +71,7 @@ class shop():
 			has_made_purchase = False
 
 			if inp_list[0] == "help" or inp_list[0] == "Help" or inp_list[0] == "HELP":
-				print("                              To buy an item, use this format: " + Fore.BLUE + "buy amount itemname." + Fore.RESET + "\n                              To sell an item, use this format: " + Fore.BLUE + "sell amount itemname." + Fore.RESET + "\n                              To re-observe items that are for sale, type " + Fore.BLUE + "'shop'" + Fore.RESET + ".\n                              To exit the shop at any time, type " + Fore.BLUE + "'done'" + Fore.RESET + ".")
+				print("                              To buy an item, use this format: " + Fore.BLUE + "buy amount itemname" + Fore.RESET + "\n                              To sell an item, use this format: " + Fore.BLUE + "sell amount itemname" + Fore.RESET + "\n                              To re-observe items that are for sale, type " + Fore.BLUE + "shop" + Fore.RESET + "\n                              To exit the shop at any time, type " + Fore.BLUE + "done" + Fore.RESET + "\n                              To check your inventory, type " + Fore.BLUE + "inv" + Fore.RESET)
 			
 			elif inp_list[0] == "shop":
 				os.system('cls' if os.name == 'nt' else "printf '\033c'")
@@ -97,6 +97,20 @@ class shop():
 
 				print(halfOfEmptyLines + inventoryDisplay + \
 				       "                              ╚══════════════════════════════════════╝\n                                ")
+			
+			elif inp_list[0] == "inv":
+				# Return the player's inventory...
+				# Open the data file.
+				with open('./filesystem/save_data.json') as file:
+					data = json.load(file)
+
+				invlst = []
+				for i in data['user_data']['inventory']:
+				    invlst.append(str(data['user_data']['inventory'][i]) + " | " + i)
+
+				for i in invlst:
+					print("                              " + str(i))
+
 			elif inp_list[0] == "done":
 				break
 
@@ -132,7 +146,7 @@ class shop():
 
 							has_made_purchase = True
 
-							print("*the SKELETON rummages through his bag and pulls out " + str(amount) + " " + name + "(s) and recieves your payment of $" + str(cost) + "*")
+							print("                              *the SKELETON rummages through his\n                              bag and gives you " + str(amount) + " " + name + "(s)\n                              then recieves your payment of $" + str(cost) + "*")
 
 							usercontrol.clean_inv()
 
@@ -140,13 +154,53 @@ class shop():
 							with open('./filesystem/save_data.json', 'w') as outfile:
 								json.dump(data, outfile, indent=4)
 						else:
-							print(""" *the SKELETON counts the money in your hand* "You trying to pull a quick one on me?! This is grade 'A' merchandise pal!" """)
+							print("""                              *the SKELETON counts the money in your hand*\n                              "You trying to pull a quick one on me?!\n                              This is grade 'A' merchandise pal!" """)
 					else:
-						print(""" *the SKELETON rummages through his bag for a while, then looks up at you in confusion* "I don't think that even exists..." """)
+						print("""                              *the SKELETON rummages through his bag for\n                              a while, then looks up at you in confusion*\n                              "I don't think that even exists..." """)
+
+				# Sell shop items.
+				if inp_list[0] == "sell":
+					# Get the amount of the item, and then create the string of the item's name.
+					amount_str = inp_list[1]
+					amount = int(amount_str)
+					name_list = inp_list[2:]
+					name = ""
+					for i in name_list:
+						name += str(" " + i)
+					name = name[1:]
+
+					# Check if the item is for sale.
+					if name in shop_items:
+						cost = amount * (shop_items[name]/2)
+
+						# Check if the player has enough funds.
+						if usercontrol.check_inv(name, cost):
+							with open('./filesystem/save_data.json') as file:
+								data = json.load(file)
+
+							# Give the user the money.
+							data['user_data']['inventory']['Coins'] += cost
+
+							# Remove the item from the player's inventory.
+							data['user_data']['inventory'][name] -= amount
+
+							has_made_purchase = True
+
+							print("                              *the SKELETON rummages through his bag and\n                              pulls out " + str(cost) + " coins(s)\n                              in exchange for your " + str(amount) + " " + name + "(s).*")
+
+							usercontrol.clean_inv()
+
+							# Save the new data.
+							with open('./filesystem/save_data.json', 'w') as outfile:
+								json.dump(data, outfile, indent=4)
+						else:
+							print("""                              *the SKELETON peers into your hand* "You\n                              trying to pull a quick one on me?! That\n                              is not the amount you agreed to sell me!" """)
+					else:
+						print("""                              *the SKELETON pulls a list out of his bag\n                              and quickly reads through it* "That item\n                              is worth less than something that is... worth-less..." """)
 			else:
-				print("     *attempting to understand your dialect, the SKELETON leans closer, sniffing in the general direction of your upper lip. This doesn't seem to help whatsoever...*")
+				print("                              *attempting to understand your dialect,\n                              the SKELETON leans closer, sniffing in the\n                              general direction of your upper lip.\n                              This doesn't seem to help whatsoever...*")
 
 		if has_made_purchase == True:
-			return '*The SKELETON closes his bag, thanks you for your purchase, and walks into the darkness...*'
+			return '                              *The SKELETON closes his bag, thanks you\n                              for your purchase, and walks into the darkness...*'
 		else:
-			return '*The SKELETON closes his bag, and walks off into the darkness, grumbling under his breath* \n"Damn adventurers wasting my time..."'
+			return '                              *The SKELETON closes his bag, and walks\n                              off into the darkness, grumbling under his breath*\n                              "Damn adventurers wasting my time..."'
