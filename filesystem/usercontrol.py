@@ -97,16 +97,13 @@ def add_to_inventory(itemname, itemamount):
 	with open('./filesystem/save_data.json', 'w') as outfile:
 		json.dump(data, outfile, indent=4)
 
-# Add to Weapons
-def add_to_weapons(weaponname, level):
+# Add to Equipment
+def add_to_equipment(where, what):
 	# Open the data file.
 	with open('./filesystem/save_data.json') as file:
 		data = json.load(file)
 
-	if weaponname in data['user_data']['weapons']:
-		data['user_data']['weapons'][weaponname] += level
-	else:
-		data['user_data']['weapons'][weaponname] = level
+	data['user_data']['equipment'][where] = what
 
 	# Save the new data.
 	with open('./filesystem/save_data.json', 'w') as outfile:
@@ -150,14 +147,14 @@ def check_inv(item, itemcount):
 		return False
 
 
-# Check if a user has an item in their weapons bag.
-def check_wep(weapon, weaponlevel):
+# Check if a user has an item in their equipment.
+def check_equipment(where, what):
 	# Open the data file.
 	with open('./filesystem/save_data.json') as file:
 		data = json.load(file)
 
-	# Check for the weapon and return weather it exists with that level.
-	if weapon in data['user_data']['weapons'] and data['user_data']['weapons'][weapon] >= weaponlevel:
+	# Check for the iotem and return wether it exists.
+	if data['user_data']['equipment'][where] == what:
 		return True
 	else:
 		return False
@@ -198,6 +195,121 @@ def round_health():
 	with open('./filesystem/save_data.json', 'w') as outfile:
 		json.dump(data, outfile, indent=4)
 
+# Consume items.
+def consume_items(name, amount):
+	# Open the data file.
+	with open('./filesystem/save_data.json') as file:
+		data = json.load(file)
+	if name in data['user_data']['inventory']:
+		if data['user_data']['inventory'][name] >= amount:
+			data['user_data']['inventory'][name] -= amount
+			# Consumables
+			if name == "Health Potion":
+				change = (amount * ((10*data['user_data']['level'])/2))
+
+				data['user_data']['health'] += change
+
+				# Save the new data.
+				with open('./filesystem/save_data.json', 'w') as outfile:
+					json.dump(data, outfile, indent=4)
+
+				return "*you consume the Health Potion(s) for " + str(change) + "HP*"
+
+			if name == "Raspberry Cram":
+				change = (amount * ((10*data['user_data']['level'])/2))
+
+				data['user_data']['health'] += change
+
+				# Save the new data.
+				with open('./filesystem/save_data.json', 'w') as outfile:
+					json.dump(data, outfile, indent=4)
+
+				return "*you consume the Raspberry Cram for " + str(change) + "HP*"
+
+			if name == "Berry Cram":
+				change = (amount * (10*data['user_data']['level']))
+
+				data['user_data']['health'] += change
+
+				# Save the new data.
+				with open('./filesystem/save_data.json', 'w') as outfile:
+					json.dump(data, outfile, indent=4)
+
+				return "*you consume the Berry Cram for " + str(change) + "HP*"
+
+			if name == "Very Berry Cram":
+				change = (amount * ((10*data['user_data']['level'])*2))
+
+				data['user_data']['health'] += change
+
+				# Save the new data.
+				with open('./filesystem/save_data.json', 'w') as outfile:
+					json.dump(data, outfile, indent=4)
+
+				return "*you consume the Very Berry Cram for " + str(change) + "HP*"
+
+			# Equipment
+			if name == "Cram Sword":
+				current_weapon = data['user_data']['equipment']['Weapon']
+				data['user_data']['equipment']['Weapon'] = name
+				if current_weapon in data['user_data']['inventory']:
+					data['user_data']['inventory'][current_weapon] += 1
+				else:
+					data['user_data']['inventory'][current_weapon] = 1
+
+				# Save the new data.
+				with open('./filesystem/save_data.json', 'w') as outfile:
+					json.dump(data, outfile, indent=4)
+
+				return "*you replace your " + current_weapon + " with your Cram Sword*"
+				
+			if name == "Shortbow":
+				current_weapon = data['user_data']['equipment']['Weapon']
+				data['user_data']['equipment']['Weapon'] = name
+				if current_weapon in data['user_data']['inventory']:
+					data['user_data']['inventory'][current_weapon] += 1
+				else:
+					data['user_data']['inventory'][current_weapon] = 1
+
+				# Save the new data.
+				with open('./filesystem/save_data.json', 'w') as outfile:
+					json.dump(data, outfile, indent=4)
+
+				return "*you replace your " + current_weapon + " with your Shortbow*"
+
+			if name == "Stone Sword":
+				current_weapon = data['user_data']['equipment']['Weapon']
+				data['user_data']['equipment']['Weapon'] = name
+				if current_weapon in data['user_data']['inventory']:
+					data['user_data']['inventory'][current_weapon] += 1
+				else:
+					data['user_data']['inventory'][current_weapon] = 1
+
+				# Save the new data.
+				with open('./filesystem/save_data.json', 'w') as outfile:
+					json.dump(data, outfile, indent=4)
+
+				return "*you replace your " + current_weapon + " with your Stone Sword*"
+
+			if name == "Staff":
+				current_weapon = data['user_data']['equipment']['Weapon']
+				data['user_data']['equipment']['Weapon'] = name
+				if current_weapon in data['user_data']['inventory']:
+					data['user_data']['inventory'][current_weapon] += 1
+				else:
+					data['user_data']['inventory'][current_weapon] = 1
+
+				# Save the new data.
+				with open('./filesystem/save_data.json', 'w') as outfile:
+					json.dump(data, outfile, indent=4)
+
+				return "*you replace your " + current_weapon + " with your Staff*"
+
+		else:
+			return "*you search through your bag but do not find enough of the item*"
+	else:
+		return "*you check your bag but do not find what you were looking for*"
+
 """END OF Character Info Manipulation"""
 
 
@@ -213,7 +325,7 @@ class functions():
                (Fore.CYAN + '           - HELP -           ' + Fore.RESET) + \
                '║\n                                   ║ help: open this menu.        ║\n' \
                '                                   ║ clear: clear the screen.     ║\n' \
-               '                                   ║ stats: get your stats.       ║\n                                   ║ inv: check your inventory.   ║\n                                   ║ wep: check your weapons.     ║                                   ' \
+               '                                   ║ stats: get your stats.       ║\n                                   ║ inv: check your inventory.   ║\n                                   ║ eqi: check your equipment.   ║                                   ' \
                '                                 ╚══════════════════════════════╝\n'
 
     # Clear screen.
@@ -309,9 +421,9 @@ class functions():
         return halfOfEmptyLines + inventoryDisplay + \
                '                              ╚══════════════════════════════════════╝'
 
-    # Command to give weapons.
+    # Command to give equipment.
     @staticmethod
-    def weapons():
+    def equipment():
         """Grab inventory data"""
 
         # Open the data file.
@@ -319,8 +431,8 @@ class functions():
             data = json.load(file)
 
         invlst = []
-        for i in data['user_data']['weapons']:
-            invlst.append(i + " | Level: " + str(data['user_data']['weapons'][i]))
+        for i in data['user_data']['equipment']:
+            invlst.append(i + " | " + str(data['user_data']['equipment'][i]))
 
         consoleHeight = 20  # number of lines visible
         numEmptyLines = consoleHeight - len(invlst)
@@ -329,8 +441,8 @@ class functions():
         for _ in range(0, (numEmptyLines // 2)):
             halfOfEmptyLines += "\n"
 
-        inventoryDisplay = '                              ╔══════════════════════════════════════╗\n                              ║             ' + \
-                           Fore.CYAN + ' - WEAPONS - ' + Fore.RESET + '            ║\n                              ║  ' \
+        inventoryDisplay = '                              ╔══════════════════════════════════════╗\n                              ║            ' + \
+                           Fore.CYAN + ' - EQUIPMENT - ' + Fore.RESET + '           ║\n                              ║  ' \
                                                                       '                                    ║\n'
         for i in invlst:
             ilen = 36 - len(i)
@@ -342,4 +454,4 @@ class functions():
 
 # Command list...
 commands = {'help': functions.help, 'clear': functions.clear, 'stats': functions.stats, 'inv': functions.inventory,
-            'wep': functions.weapons, 'shop': shop.shop.go_shop}
+            'eqi': functions.equipment, 'shop': shop.shop.go_shop}

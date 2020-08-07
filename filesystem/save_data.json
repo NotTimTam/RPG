@@ -1,18 +1,19 @@
 {
     "user_data": {
-        "name": "Tim",
-        "xp": 5,
+        "name": "UserName101",
+        "xp": 0,
         "level": 1,
-        "health": 10,
+        "health": 2260.0,
         "luck": 1,
-        "class": "Knight",
+        "class": "Rogue",
         "inventory": {
-            "Coins": 462,
-            "Health Potion": 16,
-            "Very Berry Cram": 0
+            "Coins": 19690,
+            "Health Potion": 4,
+            "Very Berry Cram": 38,
+            "Cram Sword": 1
         },
-        "weapons": {
-            "Sword": 1
+        "equipment": {
+            "Weapon": "Shortbow"
         }
     }
 }

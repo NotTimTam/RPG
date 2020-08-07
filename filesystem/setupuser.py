@@ -71,23 +71,23 @@ def create_user():
 			if inp == '1':
 				data['user_data']['class'] = "Mage"
 				data['user_data']['inventory'] = {}
-				data['user_data']['weapons'] = {}
+				data['user_data']['equipment'] = {}
 				data['user_data']['inventory']['Coins'] = 5
-				data['user_data']['weapons']['Staff'] = 1
+				data['user_data']['equipment']['Weapon'] = "Staff"
 				break
 			elif inp == '2':
 				data['user_data']['class'] = "Knight"
 				data['user_data']['inventory'] = {}
-				data['user_data']['weapons'] = {}
+				data['user_data']['equipment'] = {}
 				data['user_data']['inventory']['Coins'] = 5
-				data['user_data']['weapons']['Sword'] = 1
+				data['user_data']['equipment']['Weapon'] = "Stone Sword"
 				break
 			elif inp == '3':
 				data['user_data']['class'] = "Rogue"
 				data['user_data']['inventory'] = {}
-				data['user_data']['weapons'] = {}
+				data['user_data']['equipment'] = {}
 				data['user_data']['inventory']['Coins'] = 5
-				data['user_data']['weapons']['Shortbow'] = 1
+				data['user_data']['equipment']['Weapon'] = "Shortbow"
 				break
 			else:
 				print("\nI don't understand '" + inp + "'")
@@ -107,7 +107,7 @@ def create_user():
 
 # Startup
 def startup():
-	version = (Fore.GREEN + 'Verson 0.2 Alpha' + Fore.RESET)
+	version = (Fore.GREEN + 'Verson 0.2.5 Alpha' + Fore.RESET)
 	nm = (Fore.RED + name + Fore.RESET)
 	string = nm + " | " + version
 	string_len = (len(string) + 2) - 20
