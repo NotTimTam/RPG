@@ -27,5 +27,4 @@ while True:
 			usercontrol.clean_inv()
 		else:
 			raise Exception("\nI don't understand '" + inp + "'\nTry typing 'help' for some help...\n")
-	except:
-		print("\nI don't understand '" + inp + "'\nTry typing 'help' for some help...\n")
+	except Exception as e: print(e)

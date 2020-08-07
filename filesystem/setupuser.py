@@ -6,7 +6,7 @@ from colorama import init, Fore, Back, Style
 init()
 cmd = 'mode 100,25'
 os.system(cmd)
-name = "RPG"
+name = "rUNTIME pYTHON gAME"
 os.system("title "+name)
 
 # JSON
@@ -107,11 +107,11 @@ def create_user():
 
 # Startup
 def startup():
-	version = (Fore.GREEN + 'V.0.1 Alpha' + Fore.RESET)
+	version = (Fore.GREEN + 'Verson 0.2 Alpha' + Fore.RESET)
 	nm = (Fore.RED + name + Fore.RESET)
 	string = nm + " | " + version
 	string_len = (len(string) + 2) - 20
-	print("\n\n\n\n\n\n\n\n\n\n                                      ╔" + (string_len*"═") + "╗\n                                      ║ " + string + " ║\n                                      ╚" + (string_len*"═") + "╝\n\n")
+	print("\n\n\n\n\n\n\n\n\n\n                            ╔" + (string_len*"═") + "╗\n                            ║ " + string + " ║\n                            ╚" + (string_len*"═") + "╝\n\n")
 	time.sleep(2)
 
 	# Loading screen...
@@ -121,8 +121,8 @@ def startup():
 	v=""
 	while e > 0:
 		os.system('cls' if os.name == 'nt' else "printf '\033c'")
-		#change = random.choice([1, 2, 3, 4, 5])
-		change = 100
+		change = random.choice([1, 2, 3, 4, 5])
+		#change = 100
 		e -= change
 		e2 += 1
 		e3 += change
