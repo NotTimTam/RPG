@@ -1,86 +1,92 @@
 {
+	"Coins": {
+		"type": "currency",
+		"defense": 3,
+		"shop_desc": "it's money kid... it's money.",
+		"desc": "*A dull brass cylinder stamped with a $ symbol. The words 'hic est arum' sprawl around its edge. The reverse side is marked with the face of a forgotton ruler.*"
+	},
 	"Health Potion": {
 		"type": "stat",
 		"adjustment": "health",
 		"adjustment_variable": 0.5,
 		"shop_desc": "it restores half of your max HP.",
-		"desc": "A potient with a gritty consistency and dull green color. It tastes slightly like spoiled apples "
+		"desc": "*A strange brew with a gritty consistency and a dull green color. It tastes slightly like spoiled apples.*"
 	},
 	"Raspberry Cram": {
 		"type": "stat",
 		"adjustment": "health",
 		"adjustment_variable": 0.5,
 		"shop_desc": "it restores half of your max HP, but with the added\nbenefit of being made of cram.",
-		"desc": "You think this item is overpriced. How little you truly know..."
+		"desc": "*A strange gummy substance flavored like Raspberry*"
 	},
 	"Berry Cram": {
 		"type": "stat",
 		"adjustment": "health",
 		"adjustment_variable": 1,
 		"shop_desc": "it restores you to full HP.",
-		"desc": ""
+		"desc": "**"
 	},
 	"Very Berry Cram": {
 		"type": "stat",
 		"adjustment": "health",
 		"adjustment_variable": 2,
 		"shop_desc": "it restores you to double HP.",
-		"desc": ""
+		"desc": "*Upon thinking about Very Berry Cram, the words 'Oinkis Tis Overpice.' suddenly exit your mouth. You feel slightly strange.*"
 	},
 	"Rabbit Foot": {
 		"type": "stat-addition",
 		"adjustment": "luck",
 		"adjustment_variable": 1,
 		"shop_desc": "A magical item that increases its users luck when consumed.",
-		"desc": "It's soft and fuzzy, with a brown stain of dried blood near the joint."
+		"desc": "*It's soft and fuzzy, with a brown stain of dried blood near the joint.*"
 	},
 	"Cram Sword": {
 		"type": "Weapon",
 		"damage": 5,
 		"class": "Knight",
 		"shop_desc": "a sword made out of cram with a base damage of 5.",
-		"desc": "The hilt is crumbling slightly, and the blade has a bite taken out of it... You dont really want to use this, but do you have a choice?"
+		"desc": "*The hilt is crumbling slightly, and the blade has a bite taken out of it... You dont really want to use this, but do you have a choice?*"
 	},
 	"Bag of Wooden Runes": {
 		"type": "Weapon",
 		"damage": 3,
 		"class": "Mage",
 		"shop_desc": "Wooden Runic Spells with a base damage of 3.",
-		"desc": ""
+		"desc": "*A small bag with a multitude of wooden objects. They glow when you shake the bag!*"
 	},
 	"Rusted Sword": {
 		"type": "Weapon",
 		"damage": 3,
 		"class": "Knight",
-		"shop_desc": "an old blade with a base damage of 3.",
-		"desc": ""
+		"shop_desc": "an old sword with a base damage of 3.",
+		"desc": "*A rusty blade with a bent handle that doesn't appear to be intended by its crafters.*" 
 	},
 	"Shortbow": {
 		"type": "Weapon",
 		"damage": 3,
 		"class": "Rogue",
 		"shop_desc": "a wooden bow with a base damage of 3.",
-		"desc": "This bow "
+		"desc": "*This bow is well-worn, but cared for, with an oiled string and a smooth wooden grip.*"
 	},
 	"Robe of Power": {
 		"type": "Armor",
 		"defense": 3,
 		"class": "Mage",
 		"shop_desc": "a robe imbued with magical energy.",
-		"desc": "Glowing blue runs pulse and glow softly across the surface of this silken robe."
+		"desc": "*Glowing blue runs pulse and glow softly across the surface of this silken robe.*"
 	},
 	"Chainmail": {
 		"type": "Armor",
 		"defense": 3,
 		"class": "Knight",
-		"shop_desc": "an old piece of chainmail, riddled with holes.",
-		"desc": ""
+		"shop_desc": "an old piece of chainmail, worn out from many previous battles.",
+		"desc": "*This set of mail has seen better days. Most of the links have worn out and  *"
 	},
 	"Hood of Deception": {
 		"type": "Armor",
 		"defense": 3,
 		"class": "Rogue",
 		"shop_desc": "a magic hood that when worn, silences the user's movements.",
-		"desc": "This soft hood is feather-light around your head. "
+		"desc": "*This soft hood is feather-light around your head.*"
 	}
 }

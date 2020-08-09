@@ -1,4 +1,5 @@
 ![headerimage](https://media.discordapp.net/attachments/740253878066479105/741411105934540840/zargarinverted.png)
+*"Oinkis Tis Ovrprice"*
 
 # rUNTIME pYTHON gAME (R.P.G)
 *The Python Terminal RPG*
@@ -21,3 +22,5 @@ After all of the required packages have been installed, simply run main.py and s
 
 ## Extra Notes
 We can't wait to see what the community does with what we've made! However, until we have a stable base game with the core features we want, we won't be accepting any community made modifications into the main repo. After the game is out of its alpha stage, we will definitely be including community features we find interesting!
+
+![footerimage](https://media.discordapp.net/attachments/740253878066479105/742106058809540638/unknown.png)

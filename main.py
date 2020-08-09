@@ -39,6 +39,16 @@ while True:
 			else:
 				name = input_list[2]
 			print(usercontrol.consume_items(name, amount))
+		elif input_list[0] == "whatis":
+			if len(input_list) > 1:
+				name_list = input_list[1:]
+				name = ""
+				for i in name_list:
+					name += str(" " + i)
+				name = name[1:]
+			else:
+				name = input_list[1]
+			print(usercontrol.whatis(name))
 		else:
 			raise Exception("\nI don't understand '" + inp + "'\nTry typing 'help' for some help...\n")
 	except Exception as e: print(e)

@@ -202,6 +202,8 @@ class shop():
 				# Check what an item is.
 				if inp_list[0] == "whatis":
 					# Create a string of the item's name.
+					with open('./filesystem/item_system.json') as file2:
+							items = json.load(file2)
 					name_list = inp_list[1:]
 					name = ""
 					for i in name_list:
@@ -209,10 +211,9 @@ class shop():
 					name = name[1:]
 
 					# Check if the item is for sale.
-					if name in shop_items:
-						with open('./filesystem/item_system.json') as file2:
-							items = json.load(file2)
+					if "shop_desc" in items[name]:
 						result = items[name]['shop_desc']
+						print('                              *the SKELETON pulls a list out of his bag\n                              and quickly reads through it, then looks up at you*\n                              "' + result + '"')
 					else:
 						print("                              *attempting to understand your dialect,\n                              the SKELETON leans closer, sniffing in the\n                              general direction of your upper lip.\n                              This doesn't seem to help whatsoever...*")
 			

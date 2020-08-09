@@ -260,11 +260,11 @@ def whatis(name):
 			items = json.load(file2)
 
 	# Check if the item exists.
-	if name in shop_items:
+	if name in items:
 		result = items[name]['desc']
 		return result
 	else:
-		return "*" + name + "doesn't exist...*"
+		return "*" + name + " doesn't exist...*"
 
 """END OF Character Info Manipulation"""
 
@@ -276,13 +276,13 @@ class functions():
     # Command help menu.
     @staticmethod
     def help():
-        return '\n\n\n\n\n\n\n                             ' \
-               '╔═══════════════════════════════════════════╗\n                             ║' + \
+        return '\n\n\n\n\n\n\n                            ' \
+               '╔═══════════════════════════════════════════╗\n                            ║' + \
                (Fore.CYAN + '                  - HELP -                 ' + Fore.RESET) + \
-               '║\n                             ║ help: open this menu.                     ║\n' \
-               '                             ║ clear: clear the screen.                  ║\n' \
-               '                             ║ stats: get your stats.                    ║\n                             ║ inv: check your inventory.                ║\n                             ║ eqi: check your equipment.                ║\n                             ║ whatis itemname: check what an item is.   ║\n                             ║ consume amount itemname: consume an item. ║                             ' \
-               '                             ╚═══════════════════════════════════════════╝\n'
+               '║\n                            ║ help: open this menu.                     ║\n' \
+               '                            ║ clear: clear the screen.                  ║\n' \
+               '                            ║ stats: get your stats.                    ║\n                            ║ inv: check your inventory.                ║\n                            ║ eqi: check your equipment.                ║\n                            ║ whatis itemname: check what an item is.   ║\n                            ║ consume amount itemname: consume an item. ║                             ' \
+               '                          ╚═══════════════════════════════════════════╝\n'
 
     # Clear screen.
     @staticmethod
