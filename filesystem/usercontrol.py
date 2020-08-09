@@ -253,6 +253,19 @@ def consume_items(name, amount):
 	else:
 		return "*you check your bag but do not find what you were looking for*"
 
+# Check what an item is.
+def whatis(name):
+	# Open the data file.
+	with open('./filesystem/item_system.json') as file2:
+			items = json.load(file2)
+
+	# Check if the item exists.
+	if name in shop_items:
+		result = items[name]['desc']
+		return result
+	else:
+		return "*" + name + "doesn't exist...*"
+
 """END OF Character Info Manipulation"""
 
 

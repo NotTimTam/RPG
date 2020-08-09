@@ -32,47 +32,54 @@
 		"adjustment": "luck",
 		"adjustment_variable": 1,
 		"shop_desc": "A magical item that increases its users luck when consumed.",
-		"desc": ""
+		"desc": "It's soft and fuzzy, with a brown stain of dried blood near the joint."
 	},
 	"Cram Sword": {
 		"type": "Weapon",
 		"damage": 5,
+		"class": "Knight",
 		"shop_desc": "a sword made out of cram with a base damage of 5.",
-		"desc": "The hilt is crumbling slightly."
+		"desc": "The hilt is crumbling slightly, and the blade has a bite taken out of it... You dont really want to use this, but do you have a choice?"
 	},
-	"Star Wand": {
+	"Bag of Wooden Runes": {
 		"type": "Weapon",
 		"damage": 3,
-		"shop_desc": "a magic wand with a base damage of 5.",
+		"class": "Mage",
+		"shop_desc": "Wooden Runic Spells with a base damage of 3.",
 		"desc": ""
 	},
 	"Rusted Sword": {
 		"type": "Weapon",
 		"damage": 3,
-		"shop_desc": "an old blade with a base damage of 5.",
+		"class": "Knight",
+		"shop_desc": "an old blade with a base damage of 3.",
 		"desc": ""
 	},
 	"Shortbow": {
 		"type": "Weapon",
 		"damage": 3,
-		"shop_desc": "a wooden bow with a base damage of 5.",
+		"class": "Rogue",
+		"shop_desc": "a wooden bow with a base damage of 3.",
 		"desc": ""
 	},
 	"Robe of Power": {
 		"type": "Armor",
 		"defense": 3,
-		"shop_desc": "a cotton robe imbued with magical spells.",
+		"class": "Mage",
+		"shop_desc": "a silk robe imbued with magical spells.",
 		"desc": ""
 	},
 	"Chainmail": {
 		"type": "Armor",
 		"defense": 3,
+		"class": "Knight",
 		"shop_desc": "an old piece of chainmail, riddled with holes.",
 		"desc": ""
 	},
 	"Hood of Deception": {
 		"type": "Armor",
 		"defense": 3,
+		"class": "Rogue",
 		"shop_desc": "a magic hood that when worn, renders the wearer invisible.",
 		"desc": ""
 	}

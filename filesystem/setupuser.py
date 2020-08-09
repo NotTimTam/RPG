@@ -73,7 +73,7 @@ def create_user():
 				data['user_data']['inventory'] = {}
 				data['user_data']['equipment'] = {}
 				data['user_data']['inventory']['Coins'] = 5
-				data['user_data']['equipment']['Weapon'] = "Star Wand"
+				data['user_data']['equipment']['Weapon'] = "Bag of Wooden Runes"
 				data['user_data']['equipment']['Armor'] = "Robe of Power"
 				break
 			elif inp == '2':
