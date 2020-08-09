@@ -23,6 +23,6 @@ After all of the required packages have been installed, simply run main.py and s
 ## Extra Notes
 We can't wait to see what the community does with what we've made! However, until we have a stable base game with the core features we want, we won't be accepting any community made modifications into the main repo. After the game is out of its alpha stage, we will definitely be including community features we find interesting!
 
-If you need any more help [just check the wiki!](https://github.com/NotTimTam/RPG/wiki)
+If you need any more help, [just check the wiki!](https://github.com/NotTimTam/RPG/wiki)
 
 ![footerimage](https://media.discordapp.net/attachments/740253878066479105/742106058809540638/unknown.png)
