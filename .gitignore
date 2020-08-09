@@ -10,3 +10,4 @@ tmp
 vendor/
 venv/
 .idea/
+filesystem/save_data.json
