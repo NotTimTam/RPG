@@ -276,13 +276,13 @@ class functions():
     # Command help menu.
     @staticmethod
     def help():
-        return '\n\n\n\n\n\n\n                                   ' \
-               '╔══════════════════════════════╗\n                                   ║' + \
-               (Fore.CYAN + '           - HELP -           ' + Fore.RESET) + \
-               '║\n                                   ║ help: open this menu.        ║\n' \
-               '                                   ║ clear: clear the screen.     ║\n' \
-               '                                   ║ stats: get your stats.       ║\n                                   ║ inv: check your inventory.   ║\n                                   ║ eqi: check your equipment.   ║                                   ' \
-               '                                 ╚══════════════════════════════╝\n'
+        return '\n\n\n\n\n\n\n                             ' \
+               '╔═══════════════════════════════════════════╗\n                             ║' + \
+               (Fore.CYAN + '                  - HELP -                 ' + Fore.RESET) + \
+               '║\n                             ║ help: open this menu.                     ║\n' \
+               '                             ║ clear: clear the screen.                  ║\n' \
+               '                             ║ stats: get your stats.                    ║\n                             ║ inv: check your inventory.                ║\n                             ║ eqi: check your equipment.                ║\n                             ║ whatis itemname: check what an item is.   ║\n                             ║ consume amount itemname: consume an item. ║                             ' \
+               '                             ╚═══════════════════════════════════════════╝\n'
 
     # Clear screen.
     @staticmethod

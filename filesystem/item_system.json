@@ -60,14 +60,14 @@
 		"damage": 3,
 		"class": "Rogue",
 		"shop_desc": "a wooden bow with a base damage of 3.",
-		"desc": ""
+		"desc": "This bow "
 	},
 	"Robe of Power": {
 		"type": "Armor",
 		"defense": 3,
 		"class": "Mage",
-		"shop_desc": "a silk robe imbued with magical spells.",
-		"desc": ""
+		"shop_desc": "a robe imbued with magical energy.",
+		"desc": "Glowing blue runs pulse and glow softly across the surface of this silken robe."
 	},
 	"Chainmail": {
 		"type": "Armor",
@@ -80,7 +80,7 @@
 		"type": "Armor",
 		"defense": 3,
 		"class": "Rogue",
-		"shop_desc": "a magic hood that when worn, renders the wearer invisible.",
-		"desc": ""
+		"shop_desc": "a magic hood that when worn, silences the user's movements.",
+		"desc": "This soft hood is feather-light around your head. "
 	}
 }
