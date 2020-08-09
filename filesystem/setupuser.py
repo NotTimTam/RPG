@@ -110,7 +110,7 @@ def create_user():
 
 # Startup
 def startup():
-	version = (Fore.GREEN + 'Verson 0.2.5 Alpha' + Fore.RESET)
+	version = (Fore.GREEN + 'Verson 0.2.6 Alpha' + Fore.RESET)
 	nm = (Fore.RED + name + Fore.RESET)
 	string = nm + " | " + version
 	string_len = (len(string) + 2) - 20
