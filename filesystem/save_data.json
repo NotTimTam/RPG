@@ -1,19 +1,20 @@
 {
     "user_data": {
-        "name": "UserName101",
+        "name": "Timotheus the Great",
         "xp": 0,
         "level": 1,
-        "health": 2260.0,
+        "health": 10,
         "luck": 1,
         "class": "Rogue",
         "inventory": {
-            "Coins": 19690,
-            "Health Potion": 4,
-            "Very Berry Cram": 38,
+            "Coins": 1275,
+            "Very Berry Cram": 12,
+            "Health Potion": 10,
             "Cram Sword": 1
         },
         "equipment": {
-            "Weapon": "Shortbow"
+            "Weapon": "Shortbow",
+            "Armor": "Hood of Deception"
         }
     }
 }

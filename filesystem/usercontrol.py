@@ -200,111 +200,54 @@ def consume_items(name, amount):
 	# Open the data file.
 	with open('./filesystem/save_data.json') as file:
 		data = json.load(file)
+	with open('./filesystem/item_system.json') as file2:
+		items = json.load(file2)
 	if name in data['user_data']['inventory']:
 		if data['user_data']['inventory'][name] >= amount:
-			data['user_data']['inventory'][name] -= amount
-			# Consumables
-			if name == "Health Potion":
-				change = (amount * ((10*data['user_data']['level'])/2))
-
-				data['user_data']['health'] += change
-
-				# Save the new data.
-				with open('./filesystem/save_data.json', 'w') as outfile:
-					json.dump(data, outfile, indent=4)
-
-				return "*you consume the Health Potion(s) for " + str(change) + "HP*"
-
-			if name == "Raspberry Cram":
-				change = (amount * ((10*data['user_data']['level'])/2))
-
-				data['user_data']['health'] += change
-
-				# Save the new data.
-				with open('./filesystem/save_data.json', 'w') as outfile:
-					json.dump(data, outfile, indent=4)
-
-				return "*you consume the Raspberry Cram for " + str(change) + "HP*"
-
-			if name == "Berry Cram":
-				change = (amount * (10*data['user_data']['level']))
-
-				data['user_data']['health'] += change
-
-				# Save the new data.
-				with open('./filesystem/save_data.json', 'w') as outfile:
-					json.dump(data, outfile, indent=4)
-
-				return "*you consume the Berry Cram for " + str(change) + "HP*"
-
-			if name == "Very Berry Cram":
-				change = (amount * ((10*data['user_data']['level'])*2))
-
-				data['user_data']['health'] += change
-
-				# Save the new data.
-				with open('./filesystem/save_data.json', 'w') as outfile:
-					json.dump(data, outfile, indent=4)
-
-				return "*you consume the Very Berry Cram for " + str(change) + "HP*"
-
-			# Equipment
-			if name == "Cram Sword":
-				current_weapon = data['user_data']['equipment']['Weapon']
-				data['user_data']['equipment']['Weapon'] = name
-				if current_weapon in data['user_data']['inventory']:
-					data['user_data']['inventory'][current_weapon] += 1
-				else:
-					data['user_data']['inventory'][current_weapon] = 1
-
-				# Save the new data.
-				with open('./filesystem/save_data.json', 'w') as outfile:
-					json.dump(data, outfile, indent=4)
-
-				return "*you replace your " + current_weapon + " with your Cram Sword*"
+			if name in items:
+				# Remove the consumed items.
+				data['user_data']['inventory'][name] -= amount
 				
-			if name == "Shortbow":
-				current_weapon = data['user_data']['equipment']['Weapon']
-				data['user_data']['equipment']['Weapon'] = name
-				if current_weapon in data['user_data']['inventory']:
-					data['user_data']['inventory'][current_weapon] += 1
-				else:
-					data['user_data']['inventory'][current_weapon] = 1
+				"""Consume the item based on its type..."""
+				if items[name]['type'] == 'stat':
+					change = (amount * ((10*data['user_data']['level'])*items[name]['adjustment_variable']))
+					data['user_data'][items[name]['adjustment']] += change
 
-				# Save the new data.
-				with open('./filesystem/save_data.json', 'w') as outfile:
-					json.dump(data, outfile, indent=4)
+					# Save the new data.
+					with open('./filesystem/save_data.json', 'w') as outfile:
+						json.dump(data, outfile, indent=4)
 
-				return "*you replace your " + current_weapon + " with your Shortbow*"
+					return "*you consume the item(s) and " + str(change) + " was added to your " + items[name]['adjustment'] + "*"
+					
+				elif items[name]['type'] == 'Weapon':
+					current_weapon = data['user_data']['equipment']['Weapon']
+					data['user_data']['equipment']['Weapon'] = name
+					if current_weapon in data['user_data']['inventory']:
+						data['user_data']['inventory'][current_weapon] += 1
+					else:
+						data['user_data']['inventory'][current_weapon] = 1
 
-			if name == "Stone Sword":
-				current_weapon = data['user_data']['equipment']['Weapon']
-				data['user_data']['equipment']['Weapon'] = name
-				if current_weapon in data['user_data']['inventory']:
-					data['user_data']['inventory'][current_weapon] += 1
-				else:
-					data['user_data']['inventory'][current_weapon] = 1
+					# Save the new data.
+					with open('./filesystem/save_data.json', 'w') as outfile:
+						json.dump(data, outfile, indent=4)
 
-				# Save the new data.
-				with open('./filesystem/save_data.json', 'w') as outfile:
-					json.dump(data, outfile, indent=4)
+					return "*you replace your " + current_weapon + " with your " + name + "*"
 
-				return "*you replace your " + current_weapon + " with your Stone Sword*"
+				elif items[name]['type'] == 'Armor':
+					current_armor = data['user_data']['equipment']['Armor']
+					data['user_data']['equipment']['Armor'] = name
+					if current_armor in data['user_data']['inventory']:
+						data['user_data']['inventory'][current_armor] += 1
+					else:
+						data['user_data']['inventory'][current_armor] = 1
 
-			if name == "Staff":
-				current_weapon = data['user_data']['equipment']['Weapon']
-				data['user_data']['equipment']['Weapon'] = name
-				if current_weapon in data['user_data']['inventory']:
-					data['user_data']['inventory'][current_weapon] += 1
-				else:
-					data['user_data']['inventory'][current_weapon] = 1
+					# Save the new data.
+					with open('./filesystem/save_data.json', 'w') as outfile:
+						json.dump(data, outfile, indent=4)
 
-				# Save the new data.
-				with open('./filesystem/save_data.json', 'w') as outfile:
-					json.dump(data, outfile, indent=4)
-
-				return "*you replace your " + current_weapon + " with your Staff*"
-
+					return "*you replace your " + current_armor + " with your " + name + "*"
+			else:
+				return "*you start to check your bag but then realise that that isn't even a thing*"
 		else:
 			return "*you search through your bag but do not find enough of the item*"
 	else:

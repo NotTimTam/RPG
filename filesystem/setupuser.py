@@ -73,14 +73,16 @@ def create_user():
 				data['user_data']['inventory'] = {}
 				data['user_data']['equipment'] = {}
 				data['user_data']['inventory']['Coins'] = 5
-				data['user_data']['equipment']['Weapon'] = "Staff"
+				data['user_data']['equipment']['Weapon'] = "Star Wand"
+				data['user_data']['equipment']['Armor'] = "Robe of Power"
 				break
 			elif inp == '2':
 				data['user_data']['class'] = "Knight"
 				data['user_data']['inventory'] = {}
 				data['user_data']['equipment'] = {}
 				data['user_data']['inventory']['Coins'] = 5
-				data['user_data']['equipment']['Weapon'] = "Stone Sword"
+				data['user_data']['equipment']['Weapon'] = "Rusted Sword"
+				data['user_data']['equipment']['Armor'] = "Chainmail"
 				break
 			elif inp == '3':
 				data['user_data']['class'] = "Rogue"
@@ -88,6 +90,7 @@ def create_user():
 				data['user_data']['equipment'] = {}
 				data['user_data']['inventory']['Coins'] = 5
 				data['user_data']['equipment']['Weapon'] = "Shortbow"
+				data['user_data']['equipment']['Armor'] = "Hood of Deception"
 				break
 			else:
 				print("\nI don't understand '" + inp + "'")

@@ -1,0 +1,50 @@
+{
+	"Health Potion": {
+		"type": "stat",
+		"adjustment": "health",
+		"adjustment_variable": 0.5
+	},
+	"Raspberry Cram": {
+		"type": "stat",
+		"adjustment": "health",
+		"adjustment_variable": 0.5
+	},
+	"Berry Cram": {
+		"type": "stat",
+		"adjustment": "health",
+		"adjustment_variable": 1
+	},
+	"Very Berry Cram": {
+		"type": "stat",
+		"adjustment": "health",
+		"adjustment_variable": 2
+	},
+	"Cram Sword": {
+		"type": "Weapon",
+		"damage": 5
+	},
+	"Star Wand": {
+		"type": "Weapon",
+		"damage": 3
+	},
+	"Rusted Sword": {
+		"type": "Weapon",
+		"damage": 3
+	},
+	"Shortbow": {
+		"type": "Weapon",
+		"damage": 3
+	},
+	"Robe of Power": {
+		"type": "Armor",
+		"defense": 3
+	},
+	"Chainmail": {
+		"type": "Armor",
+		"defense": 3
+	},
+	"Hood of Deception": {
+		"type": "Armor",
+		"defense": 3
+	}
+}

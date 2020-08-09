@@ -14,10 +14,11 @@ while True:
 	inp = input("> ")
 	input_list = inp.split()
 	usercontrol.clean_inv()
+	usercontrol.round_health()
 	try:
-		if input_list[0] == "":
+		if inp == "":
 			pass
-		elif input_list[0] == " ":
+		elif inp == " ":
 			pass
 		elif input_list[0] in usercontrol.commands.keys():
 			# Clear the screen and run the command.
