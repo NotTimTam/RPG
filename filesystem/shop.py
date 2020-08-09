@@ -7,11 +7,6 @@ from filesystem import usercontrol
 skelly = """\n\n\n\n\n\n     ╔═══════════════════════════════════════════════════════════════════════════════════════╗\n     ║      _..--""---.                                                                      ║\n     ║     /           ".    *ZARGAR the SKELETON merchant bumbulingly skips into the room*  ║\n     ║     `            l                                                                    ║\n     ║     |'._  ,._ l/"     "Would you like to buy my wares? I have various wares for sale. ║\n     ║     |  _J<__/.v._/     You should definitely buy my wares."                           ║\n     ║      \\( ,~._,,,,-)                                                                    ║\n     ║       `-\\' \\`,,j|                                                                     ║\n     ║          \\_,____J                                                                     ║\n     ║     .--.__)--(                                                                        ║\n     ╚═══════════════════════════════════════════════════════════════════════════════════════╝"""
 
 shop_items = {"Health Potion": 15, "Raspberry Cram": 50, "Berry Cram": 100, "Very Berry Cram": 200, "Cram Sword": 500} # Item Costs.
-shop_items_desc = {"Health Potion": "it restores half of your max HP.",
-					"Raspberry Cram": "it restores half of your max HP, but with the added\nbenefit of being made of cram.",
-					"Berry Cram": "it restores you to full HP.",
-					"Very Berry Cram": "it restores you to double HP.",
-					"Cram Sword": "a sword made out of cram with a base damage of 10."} # Item Descriptions.
 
 # Shop design and control.
 class shop():
@@ -214,12 +209,10 @@ class shop():
 					name = name[1:]
 
 					# Check if the item is for sale.
-					if name in shop_items_desc:
-						result = shop_items_desc[name]
-						try:
-							print('                              *the SKELETON pulls a list out of his bag\n                              and quickly reads through it, then looks up at you*\n                              "' + result + '"')
-						except:
-							print("AAAGH")
+					if name in shop_items:
+						with open('./filesystem/item_system.json') as file2:
+							items = json.load(file2)
+						result = items[name]['shop_desc']
 					else:
 						print("                              *attempting to understand your dialect,\n                              the SKELETON leans closer, sniffing in the\n                              general direction of your upper lip.\n                              This doesn't seem to help whatsoever...*")
 			

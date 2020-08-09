@@ -2,49 +2,78 @@
 	"Health Potion": {
 		"type": "stat",
 		"adjustment": "health",
-		"adjustment_variable": 0.5
+		"adjustment_variable": 0.5,
+		"shop_desc": "it restores half of your max HP.",
+		"desc": "A potient with a gritty consistency and dull green color. It tastes slightly like spoiled apples "
 	},
 	"Raspberry Cram": {
 		"type": "stat",
 		"adjustment": "health",
-		"adjustment_variable": 0.5
+		"adjustment_variable": 0.5,
+		"shop_desc": "it restores half of your max HP, but with the added\nbenefit of being made of cram.",
+		"desc": "You think this item is overpriced. How little you truly know..."
 	},
 	"Berry Cram": {
 		"type": "stat",
 		"adjustment": "health",
-		"adjustment_variable": 1
+		"adjustment_variable": 1,
+		"shop_desc": "it restores you to full HP.",
+		"desc": ""
 	},
 	"Very Berry Cram": {
 		"type": "stat",
 		"adjustment": "health",
-		"adjustment_variable": 2
+		"adjustment_variable": 2,
+		"shop_desc": "it restores you to double HP.",
+		"desc": ""
+	},
+	"Rabbit Foot": {
+		"type": "stat-addition",
+		"adjustment": "luck",
+		"adjustment_variable": 1,
+		"shop_desc": "A magical item that increases its users luck when consumed.",
+		"desc": ""
 	},
 	"Cram Sword": {
 		"type": "Weapon",
-		"damage": 5
+		"damage": 5,
+		"shop_desc": "a sword made out of cram with a base damage of 5.",
+		"desc": "The hilt is crumbling slightly."
 	},
 	"Star Wand": {
 		"type": "Weapon",
-		"damage": 3
+		"damage": 3,
+		"shop_desc": "a magic wand with a base damage of 5.",
+		"desc": ""
 	},
 	"Rusted Sword": {
 		"type": "Weapon",
-		"damage": 3
+		"damage": 3,
+		"shop_desc": "an old blade with a base damage of 5.",
+		"desc": ""
 	},
 	"Shortbow": {
 		"type": "Weapon",
-		"damage": 3
+		"damage": 3,
+		"shop_desc": "a wooden bow with a base damage of 5.",
+		"desc": ""
 	},
 	"Robe of Power": {
 		"type": "Armor",
-		"defense": 3
+		"defense": 3,
+		"shop_desc": "a cotton robe imbued with magical spells.",
+		"desc": ""
 	},
 	"Chainmail": {
 		"type": "Armor",
-		"defense": 3
+		"defense": 3,
+		"shop_desc": "an old piece of chainmail, riddled with holes.",
+		"desc": ""
 	},
 	"Hood of Deception": {
 		"type": "Armor",
-		"defense": 3
+		"defense": 3,
+		"shop_desc": "a magic hood that when worn, renders the wearer invisible.",
+		"desc": ""
 	}
 }
