@@ -2,8 +2,8 @@
 	"Coins": {
 		"type": "currency",
 		"defense": 3,
-		"shop_desc": "it's money kid... it's money.",
-		"desc": "*A dull brass cylinder stamped with a $ symbol. The words 'hic est arum' sprawl around its edge. The reverse side is marked with the face of a forgotton ruler.*"
+		"shop_desc": "it's money kid... It's money.",
+		"desc": "*A dull brass cylinder stamped with a '$' symbol. The words 'hic est arum' sprawl around its edge. The reverse side is marked with the face of a forgotton ruler.*"
 	},
 	"Health Potion": {
 		"type": "stat",

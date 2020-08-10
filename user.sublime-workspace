@@ -59,19 +59,10 @@
 			}
 		},
 		{
-			"file": "filesystem/save_data.json",
+			"file": "filesystem/rooms.py",
 			"settings":
 			{
-				"buffer_size": 435,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 1669,
+				"buffer_size": 332,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -255,6 +246,8 @@
 	[
 		"/D/Program Files/Sublime Text 3/Projects/RPG/filesystem/save_data.json",
 		"/D/Program Files/Sublime Text 3/Projects/RPG/.flooignore",
+		"/D/Program Files/Sublime Text 3/Projects/RPG/README.md",
+		"/D/Program Files/Sublime Text 3/Projects/RPG/.gitignore",
 		"/H/wpa_supplicant.conf",
 		"/C/Users/timmy/AppData/Roaming/Sublime Text 3/Packages/<string>",
 		"/C/Users/timmy/.floorc.json",
@@ -262,7 +255,6 @@
 		"/D/Program Files/Sublime Text 3/Projects/RPG/requirements.txt",
 		"/D/Program Files/Sublime Text 3/Projects/RPG/filesystem/usercontrol.py",
 		"/D/Program Files/Sublime Text 3/Projects/RPG/filesystem/setupuser.py",
-		"/D/Program Files/Sublime Text 3/Projects/RPG/README.md",
 		"/D/Program Files/Sublime Text 3/Projects/RPG/requirements",
 		"/D/Program Files/Sublime Text 3/Projects/RPG/.git/COMMIT_EDITMSG.COMMIT_EDITMSG",
 		"/D/Program Files/Sublime Text 3/Projects/RPG/.git/HEAD",
@@ -276,7 +268,7 @@
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -323,7 +315,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -339,8 +331,8 @@
 						"selection":
 						[
 							[
-								1041,
-								1041
+								26,
+								26
 							]
 						],
 						"settings":
@@ -378,10 +370,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4066.0,
+						"translation.y": 4141.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -407,10 +399,10 @@
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 648.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -465,68 +457,38 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3416.0,
+						"translation.y": 3144.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "filesystem/save_data.json",
+					"file": "filesystem/rooms.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 435,
+						"buffer_size": 332,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								377,
-								377
+								311,
+								311
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "README.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1669,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1562,
-								1562
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
